@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+jinja2
+requests
+fpdf
+python-multipart
+//comand to run code 
+.\venv\Scripts\Activate.ps1
+uvicorn main:app --reload
