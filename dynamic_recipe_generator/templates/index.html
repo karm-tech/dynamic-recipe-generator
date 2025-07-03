@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DRG 4.0 - Home | ALPHA SQUAD</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8f8f8, #fff);
+      color: #333;
+    }
+    nav {
+      background-color: #222;
+      padding: 15px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 6px #000;
+      animation: fadeInDown 1.5s ease;
+    }
+    .hero p {
+      font-size: 20px;
+      margin: 20px 0;
+      animation: fadeInUp 1.5s ease;
+    }
+    .hero a {
+      padding: 12px 25px;
+      background: #ff6600;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      animation: zoomIn 2s ease;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 50px 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #333;
+      color: #aaa;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="/">🏠 Home</a></li>
+      <li><a href="/search">🍽 Recipes</a></li>
+      <li><a href="/seasonal">🎉 Seasonal</a></li>
+      <li><a href="/accessories">🛍 Accessories</a></li>
+      <li><a href="/shopping">🛒 Shopping</a></li>
+    </ul>
+  </nav>
+  
+      
+  <div class="hero">
+    <h1>Welcome to DRG 4.0</h1>
+    <p>Generate smart recipes with AI. Fast, Easy, Creative!</p>
+    <a href="search">Start Cooking 🍳</a>
+  </div>
+
+  <section class="features">
+    <div class="card">
+      <h3>📄 Recipe as PDF</h3>
+      <p>Download beautifully formatted recipes anytime.</p>
+    </div>
+    <div class="card">
+      <h3>🧾 Ingredient Lists</h3>
+      <p>Auto-created from each recipe — no manual typing!</p>
+    </div>
+    <div class="card">
+      <h3>🖼️ Food Image Gen</h3>
+      <p>Visualize your dish before you even cook it.</p>
+    </div>
+    <div class="card">
+      <h3>📧 Email Recipes</h3>
+      <p>Send recipes to yourself or loved ones instantly.</p>
+    </div>
+    <div class="card">
+      <h3>🛍️ Accessories</h3>
+      <p>Redirect to Amazon & Flipkart to buy kitchen tools.</p>
+    </div>
+    <div class="card">
+      <h3>🌎 Seasonal/National</h3>
+      <p>Explore recipes based on festivals and regions.</p>
+    </div>
+  </section>
+  
+  <footer>
+    <div>
+      <p>Made with ❤️ by <strong>ALPHA SQUAD</strong> | DRG 4.0 Project</p>
+      <p style="margin: 10px 0;">
+        📧 <a href="mailto:support@drgfoods.org" style="color:#ccc; text-decoration:none;">support@drgfoods.org</a> |
+        🐙 <a href="https://github.com/drg-squad" target="_blank" style="color:#ccc; text-decoration:none;">github.com/drg-squad</a> |
+        📷 <a href="https://instagram.com/drg.squad" target="_blank" style="color:#ccc; text-decoration:none;">@drg.squad</a>
+      </p>
+      <a href="/about" style="color:#ccc; text-decoration:none;">About</a> |
+      <a href="/contact" style="color:#ccc; text-decoration:none;">Contact</a>
+      <p style="color: #aaa;">© 2025 DRG 4.0. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+
+</body>
+</html>
