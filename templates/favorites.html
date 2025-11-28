@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - DRG 5.0</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-btn:hover {
+            background: #d32f2f;
+        }
+
+        .regenerate-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .regenerate-btn:hover {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="/search">🍽 Recipes</a></li>
+            <li><a href="/meal-planner">📅 Meal Planner</a></li>
+            <li><a href="/favorites">❤️ Favorites</a></li>
+            <li><a href="/history">📜 History</a></li>
+            <li><a href="/shopping">🛒 Shopping</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>❤️ My Favorite Recipes</h1>
+        <p>Your saved recipes appear here. Click "Regenerate" to make them again!</p>
+
+        <div id="favoritesList"></div>
+
+        <div id="emptyState" style="text-align:center; padding: 60px 20px; display: none;">
+            <h2 style="color: #999;">No Favorites Yet</h2>
+            <p>Start saving recipes from the <a href="/search" style="color: var(--primary-color);">Search page</a>!</p>
+        </div>
+    </div>
+
+      <footer>
+    <p>Made with ❤️ by <strong>ALPHA SQUAD</strong> | DRG 5.0 Project</p>
+    <div class="footer-links">
+      <a href="/about">About Us</a> | <a href="/contact">Contact</a>
+    </div>
+    <p class="copyright">© 2025 Dynamic Recipe Generator. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

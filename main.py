@@ -60,6 +60,19 @@ async def accessories(request: Request):
 @app.get("/seasonal", response_class=HTMLResponse)
 async def seasonal(request: Request):
     return templates.TemplateResponse("seasonal.html", {"request": request})
+
+# DRG 5.0 Routes
+@app.get("/favorites", response_class=HTMLResponse)
+async def favorites(request: Request):
+    return templates.TemplateResponse("favorites.html", {"request": request})
+
+@app.get("/history", response_class=HTMLResponse)
+async def history(request: Request):
+    return templates.TemplateResponse("history.html", {"request": request})
+
+@app.get("/meal-planner", response_class=HTMLResponse)
+async def meal_planner(request: Request):
+    return templates.TemplateResponse("meal_planner.html", {"request": request})
 @app.get("/api/check-hf-key")
 def check_hf_key():
     return {"key_set": HUGGINGFACE_API_KEY != "enter the key"}
@@ -157,3 +170,59 @@ def download_pdf_endpoint(title: str = Form(...), ingredients: str = Form(...), 
         media_type="application/pdf",
         headers={"Content-Disposition": f"attachment; filename={title.replace(' ', '_')}.pdf"}
     )
+
+# DRG 5.0 API Endpoints
+@app.post("/api/generate-meal-plan")
+async def generate_meal_plan(diet_preference: str = Form(None), cuisine: str = Form(None)):
+    if HUGGINGFACE_API_KEY == "enter the key" or not HUGGINGFACE_API_KEY:
+        return {"error": "❌ API Key missing. Please set HUGGINGFACE_API_KEY in main.py"}
+    
+    diet_text = f"{diet_preference} " if diet_preference and diet_preference != "" else ""
+    cuisine_text = f"{cuisine} cuisine " if cuisine and cuisine != "" else ""
+    
+    prompt = f"""
+You are a professional meal planning assistant. Create a 7-day meal plan with {diet_text}{cuisine_text}recipes.
+
+For each day, provide:
+- Breakfast
+- Lunch
+- Dinner
+- Snack (optional)
+
+Make sure the meals are varied, balanced, and easy to prepare.
+Format as:
+Day 1:
+Breakfast: [recipe name]
+Lunch: [recipe name]
+Dinner: [recipe name]
+
+(Repeat for all 7 days)
+"""
+    
+    headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
+    payload = {
+        "inputs": prompt,
+        "parameters": {
+            "max_new_tokens": 800,
+            "temperature": 0.7,
+            "return_full_text": False
+        }
+    }
+    
+    try:
+        response = requests.post(
+            f"https://api-inference.huggingface.co/models/{HF_MODEL}",
+            headers=headers,
+            json=payload,
+            timeout=30
+        )
+        result = response.json()
+        
+        if isinstance(result, list) and "generated_text" in result[0]:
+            meal_plan = result[0]["generated_text"]
+            return {"meal_plan": meal_plan}
+        else:
+            return {"error": "❌ Error generating meal plan. Try again later."}
+    except Exception as e:
+        return {"error": f"❌ Error: {str(e)}"}
+

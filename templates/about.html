@@ -3,60 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>About Us - DRG 4.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - DRG 5.0</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f2f2f2;
-      color: #333;
-    }
-
-    nav {
-      background-color: #222;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h1,
-    h2,
-    h3 {
-      color: #222;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
     .team-photos {
       display: flex;
       flex-wrap: wrap;
@@ -67,7 +18,7 @@
 
     .member {
       text-align: center;
-      max-width: 200px;
+      max-width: 220px;
     }
 
     .member img {
@@ -75,20 +26,22 @@
       width: 150px;
       height: 150px;
       object-fit: cover;
+      border: 4px solid var(--primary-color);
+      transition: transform 0.3s ease;
     }
 
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
+    .member img:hover {
+      transform: scale(1.1);
     }
 
-    footer a {
-      color: #ccc;
-      text-decoration: none;
+    .member h4 {
+      margin: 10px 0 5px;
+      color: var(--primary-color);
+    }
+
+    .member p {
+      font-size: 0.85rem;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -99,79 +52,75 @@
     <ul>
       <li><a href="/">🏠 Home</a></li>
       <li><a href="/search">🍽 Recipes</a></li>
-      <li><a href="/seasonal">🎉 Seasonal</a></li>
-      <li><a href="/accessories">🛍 Accessories</a></li>
+      <li><a href="/meal-planner">📅 Meal Planner</a></li>
+      <li><a href="/favorites">❤️ Favorites</a></li>
+      <li><a href="/history">📜 History</a></li>
       <li><a href="/shopping">🛒 Shopping</a></li>
     </ul>
   </nav>
 
   <div class="container">
-    <h1>About DRG 4.0</h1>
-    <p><strong>DRG 4.0</strong> is an AI-powered recipe assistant built by a group of passionate tech enthusiasts — the
-      <strong>ALPHA SQUAD</strong>. Our mission is to simplify everyday cooking using technology that’s smart, fast, and
+    <h1>About DRG 5.0</h1>
+    <p><strong>DRG 5.0</strong> is an AI-powered recipe assistant built by a group of passionate tech enthusiasts — the
+      <strong>ALPHA SQUAD</strong>. Our mission is to simplify everyday cooking using technology that's smart, fast, and
       user-friendly.
     </p>
 
     <h2>👥 Meet the Team</h2>
     <div class="team-photos">
       <div class="member">
-        <img src="../static/images/karm.jpg" alt="Chauhan Karm">
+        <img src="/static/images/karm.jpg" alt="Chauhan Karm" onerror="this.src='https://via.placeholder.com/150'">
         <h4>Chauhan Karm</h4>
-        <p>Leader & Database Manager</p>
+        <p>Leader, DB/Server Manager & Backend Developer</p>
       </div>
       <div class="member">
-        <img src="../static/images/sahil.jpg" alt="Desai Sahil">
+        <img src="/static/images/sahil.jpg" alt="Desai Sahil" onerror="this.src='https://via.placeholder.com/150'">
         <h4>Desai Sahil</h4>
         <p>Co-leader & Backend Developer</p>
       </div>
       <div class="member">
-        <img src="../static/images/devang.jpg" alt="Patel Devang">
-
+        <img src="/static/images/devang.jpg" alt="Patel Devang" onerror="this.src='https://via.placeholder.com/150'">
         <h4>Patel Devang</h4>
         <p>Planning & Communication Lead</p>
       </div>
       <div class="member">
-        <img src="../static/images/Ronak .jpg" alt="Prajapati Ronak">
+        <img src="/static/images/Ronak .jpg" alt="Prajapati Ronak" onerror="this.src='https://via.placeholder.com/150'">
         <h4>Prajapati Ronak</h4>
         <p>Frontend Developer</p>
       </div>
     </div>
 
-    <h2>🚀 What We Built in DRG 4.0</h2>
-    <p>With DRG 4.0, users can:</p>
+    <h2>🚀 What We Built in DRG 5.0</h2>
+    <p>With DRG 5.0, users can:</p>
     <ul>
-      <li>Search for recipes by ingredient or name</li>
-      <li>Download recipes as PDFs</li>
-      <li>Get auto-generated shopping lists</li>
-      <li>View smart accessory suggestions</li>
-      <li>Explore recipes based on seasonal festivals</li>
+      <li>🍽 Search for recipes by ingredient or name with dietary filters</li>
+      <li>❤️ Save favorite recipes for quick access</li>
+      <li>📜 Auto-tracked recipe history with timestamps</li>
+      <li>🧠 AI-powered 7-day meal planner with dietary preferences</li>
+      <li>📥 Download recipes as beautifully formatted PDFs</li>
+      <li>🛍️ Auto-generated shopping lists from recipes</li>
+      <li>🎉 Explore recipes based on seasonal festivals</li>
+      <li>🔥 Smart accessory suggestions for your kitchen</li>
     </ul>
 
-    <h2>🔄 What’s Coming in DRG 5.0</h2>
+    <h2>🔮 What's Coming in DRG 6.0</h2>
     <ul>
       <li><strong>🗣️ Voice-Activated Cooking Assistant</strong> – Hands-free control with voice commands.</li>
-      <li><strong>🔐 User Login System</strong> – Personal profiles and saved preferences.</li>
-      <li><strong>📜 Saved Recipe History</strong> – Auto-saved recipe archive for each user.</li>
-      <li><strong>❤️ Favorites List</strong> – Quickly bookmark your favorite dishes.</li>
-      <li><strong>📅 Recipe Scheduler</strong> – Schedule recipes to be sent to your email or phone.</li>
-      <li><strong>🧠 Smart Meal Planner</strong> – Weekly meal suggestions powered by AI.</li>
-      <li><strong>💾 Advanced Database Integration</strong> – Improved backend performance and dynamic data support.
+      <li><strong>🔐 User Login System</strong> – Personal profiles with saved preferences and full database backend.
       </li>
+      <li><strong>📧 Recipe Scheduler</strong> – Schedule recipes to be sent to your email or phone.</li>
+      <li><strong>🏆 Recipe Ratings & Reviews</strong> – Rate and review recipes from the community.</li>
+      <li><strong>📱 Mobile App</strong> – Native iOS and Android applications.</li>
+      <li><strong>💾 Advanced Database Integration</strong> – PostgreSQL backend with user data persistence.</li>
     </ul>
   </div>
 
   <footer>
-    <p>Made with ❤️ by <strong>ALPHA SQUAD</strong> | DRG 4.0 Project</p>
-    <p style="margin: 10px 0;">
-      📧 <a href="mailto:support@drgfoods.org" style="color:#ccc; text-decoration:none;">support@drgfoods.org</a> |
-      🐙 <a href="https://github.com/drg-squad" target="_blank"
-        style="color:#ccc; text-decoration:none;">github.com/drg-squad</a> |
-      📷 <a href="https://instagram.com/drg.squad" target="_blank"
-        style="color:#ccc; text-decoration:none;">@drg.squad</a>
-    </p>
-    <a href="/about" style="color:#ccc; text-decoration:none;">About</a> |
-    <a href="/contact" style="color:#ccc; text-decoration:none;">Contact</a>
-    <p style="color: #aaa;">© 2025 DRG 4.0. All rights reserved.</p>
+    <p>Made with ❤️ by <strong>ALPHA SQUAD</strong> | DRG 5.0 Project</p>
+    <div class="footer-links">
+      <a href="/about">About Us</a> | <a href="/contact">Contact</a>
+    </div>
+    <p class="copyright">© 2025 Dynamic Recipe Generator. All rights reserved.</p>
   </footer>
 
 </body>
